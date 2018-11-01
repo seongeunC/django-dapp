@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} <div style='width:100%; text-align:center; color:green;'>{{ post.title }}</div>{% endblock %}
+
+{% block content %}
+<hr>
+<div>
+	{% include 'include/post.html' with post_type='detail' %}
+</div>
+<div>
+</div>
+{% endblock %}

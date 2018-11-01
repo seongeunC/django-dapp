@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+
+<div style='text-align:center; margin-top:30%%'>
+<form method='post'>
+  {% csrf_token %}
+<input type="submit">
+</form>
+</div>
+{% endblock %}

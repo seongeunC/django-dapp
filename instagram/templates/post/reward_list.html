@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}{% endblock %}
+{% block content %}
+<div style='text-align:center'>
+<div>
+  <img style='width:10%;' src="{% static 'img/crown.jpg' %}" alt="">
+    <h2>이 주의 레시피 ( 1위 ~ 5위 보상 )</h2>
+</div>
+<br>
+<div style='font-size:2em'>
+  {% for name,score in top5_user %}
+    <div><div style='color:red;'>{{ forloop.counter }}위</div> "{{ name }}" &nbsp; 활동점수 : &nbsp;&nbsp {{ score }} 점 </div><br>
+  {% endfor %}
+</div>
+</div>
+
+{% endblock %}

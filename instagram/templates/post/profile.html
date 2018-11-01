@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+{% block content %}
+
+<div style='text-align: center; font: normal normal normal 88px/1.4em avenir-lt-w01_85-heavy1475544,sans-serif;'>
+{{ user }}
+</div>
+<div style='text-align: center; font: normal normal normal 25px/1.4em avenir-lt-w01_35-light1475496,sans-serif;'>
+  {% if gender == 'm' and user_classification == 'n' %}
+    Male / Normal
+  {% elif gender == 'm' and user_classification == 'c' %}
+    Male / Cook
+  {% elif gender == 'f' and user_classification == 'n' %}
+    Female / Normal
+  {% else %}
+    Female / Cook
+  {% endif %}
+</div>
+<br>
+<div style='text-align: center; color:red;'>
+   {{ wallet }}
+   <br>
+   <br>
+ 토큰 잔액 :   {{ total_token }}
+</div>
+<br>
+<div style='text-align:center; color:#0431B4'>
+  <span>전체 게시글 좋아요수 : {{ total_like }} </span> <br>
+  <span>전체 게시글 조회수 : {{ total_views }} </span>
+</div>
+
+<div style='text-align: center'>
+  <h2>My Recipe List </h2>
+  <hr>
+  {% for post in posts %}
+    <div style='font-size:2em; color:green;'>{{ post.title }}</div>  <img src="{{ post.photo.url }}" alt="" class='post-image' style='width:10%'><hr>
+  {% endfor %}
+</div>
+
+{% endblock %}
